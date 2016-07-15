@@ -111,7 +111,7 @@ It('`eachAsync` should work', function* (done) {
     cursor.eachAsync(function(result) {
       history.push(count);
       count++;
-      return new Promise(function(resolve, reject) {
+      return Promise.defer(function(resolve, reject) {
         setTimeout(function() {
           history.push(promisesWait);
           promisesWait--;

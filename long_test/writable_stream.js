@@ -21,6 +21,6 @@ r.tableCreate(tableName).run().then(function(result) {
       assert.equal(result, size);
       console.log('Done');
       r.getPoolMaster().drain();
-    }).catch(console.log);
+    }).fail(console.log);
   });
-}).catch(console.log);
+}).fail(console.log);

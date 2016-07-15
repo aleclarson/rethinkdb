@@ -202,7 +202,7 @@ It('If the pool cannot create a connection, it should reject queries', function*
 It('If the pool cannot create a connection, it should reject queries - timeout', function* (done) {
   try {
     var r = require(__dirname+'/../lib')({host: "notarealhost", buffer: 1, max: 2, silent: true});
-    yield new Promise(function(resolve, reject) { setTimeout(resolve, 1000) });
+    yield Promise.defer(function(resolve, reject) { setTimeout(resolve, 1000) });
     yield r.expr(1).run()
     done(new Error("Was expecting an error"));
   }
@@ -262,13 +262,13 @@ It('`drain` should work in case of failures', function* (done) {
     });
     var pool = r.getPool(0);
     // Sleep 1 sec
-    yield new Promise(function(resolve, reject) { setTimeout(resolve, 150) });
+    yield Promise.defer(function(resolve, reject) { setTimeout(resolve, 150) });
     pool.drain();
 
     // timeoutReconnect should have been canceled
     assert.equal(pool.timeoutReconnect, null);
     pool.options.silent = false;
-    yield new Promise(function(resolve, reject) { setTimeout(resolve, 1000) });
+    yield Promise.defer(function(resolve, reject) { setTimeout(resolve, 1000) });
     done();
   }
   catch(e) {

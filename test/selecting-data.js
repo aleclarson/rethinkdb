@@ -172,7 +172,7 @@ It('`getAll` should work with multiple values - secondary index 1', function* (d
     assert.deepEqual(result, [{'index':'field','ready':true}]);
 
     // Yield one second -- See https://github.com/rethinkdb/rethinkdb/issues/2170
-    var p = new Promise(function(resolve, reject) {
+    var p = Promise.defer(function(resolve, reject) {
       setTimeout(function() { resolve() }, 1000)
     });
     yield p;
@@ -209,7 +209,7 @@ It('`getAll` should work with multiple values - secondary index 2', function* (d
     assert.deepEqual(result, [{'index':'fieldAddOne','ready':true}]);
 
     // Yield one second -- See https://github.com/rethinkdb/rethinkdb/issues/2170
-    var p = new Promise(function(resolve, reject) {
+    var p = Promise.defer(function(resolve, reject) {
       setTimeout(function() { resolve() }, 1000)
     });
     yield p;
