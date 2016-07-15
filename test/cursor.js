@@ -1,6 +1,6 @@
-var config = require('./config.js');
+var config = require('./config');
 var r = require('../lib')(config);
-var util = require(__dirname+'/util/common.js');
+var util = require('./util/common');
 var assert = require('assert');
 
 var uuid = util.uuid;

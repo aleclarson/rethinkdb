@@ -8,7 +8,7 @@ var net = require('net');
 var protodef = require(__dirname+"/../../../lib/protodef.js");
 var Query = require(__dirname+"/query.js");
 var util = require('util');
-var _util = require(__dirname+'/../common.js');
+var _util = require('../common');
 
 // Create a new TCP server -- used for tests
 function Server(options) {

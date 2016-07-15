@@ -1,6 +1,6 @@
-var config = require(__dirname+'/config.js');
-var r = require(__dirname+'/../lib')({pool: false, silent: true});
-var util = require(__dirname+'/util/common.js');
+var config = require('./config');
+var r = require('../lib')({pool: false, silent: true});
+var util = require('./util/common');
 var assert = require('assert');
 
 var uuid = util.uuid;
@@ -412,7 +412,7 @@ It('`grant` should work', function* (done) {
 
 It('If `servers` is specified, it cannot be empty', function* (done) {
   try{
-    var r = require(__dirname+'/../lib')({
+    var r = require('../lib')({
       servers: []
     });
   } catch(e) {

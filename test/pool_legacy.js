@@ -1,6 +1,6 @@
-var config = require(__dirname+'/config.js');
-var r = require(__dirname+'/../lib')({pool: false, silent: true});
-var util = require(__dirname+'/util/common.js');
+var config = require('./config');
+var r = require('../lib')({pool: false, silent: true});
+var util = require('./util/common');
 var assert = require('assert');
 var Promise = require('bluebird');
 
@@ -186,7 +186,7 @@ It('`poolMaster.drain` should eventually remove all the connections', function* 
 });
 It('If the pool cannot create a connection, it should reject queries', function* (done) {
   try {
-    var r = require(__dirname+'/../lib')({host: "notarealhost", buffer: 1, max: 2, silent: true});
+    var r = require('../lib')({host: "notarealhost", buffer: 1, max: 2, silent: true});
     yield r.expr(1).run()
     done(new Error("Was expecting an error"));
   }
@@ -201,7 +201,7 @@ It('If the pool cannot create a connection, it should reject queries', function*
 });
 It('If the pool cannot create a connection, it should reject queries - timeout', function* (done) {
   try {
-    var r = require(__dirname+'/../lib')({host: "notarealhost", buffer: 1, max: 2, silent: true});
+    var r = require('../lib')({host: "notarealhost", buffer: 1, max: 2, silent: true});
     yield Promise.defer(function(resolve, reject) { setTimeout(resolve, 1000) });
     yield r.expr(1).run()
     done(new Error("Was expecting an error"));
@@ -219,7 +219,7 @@ It('If the pool cannot create a connection, it should reject queries - timeout',
 
 It('If the pool is drained, it should reject queries - 1', function* (done) {
   try {
-    var r = require(__dirname+'/../lib')({buffer: 1, max: 2, silent: true});
+    var r = require('../lib')({buffer: 1, max: 2, silent: true});
 
     r.getPoolMaster().drain();
     var result = yield r.expr(1).run();
@@ -237,7 +237,7 @@ It('If the pool is drained, it should reject queries - 1', function* (done) {
 
 It('If the pool is drained, it should reject queries - 2', function* (done) {
   try {
-    var r = require(__dirname+'/../lib')({buffer: 1, max: 2, silent: true});
+    var r = require('../lib')({buffer: 1, max: 2, silent: true});
 
     yield r.getPoolMaster().drain();
     var result = yield r.expr(1).run();

@@ -1,4 +1,4 @@
-var config = require('./config.js');
+var config = require('./config');
 var clientConfig = JSON.parse(JSON.stringify(config)); // clone object
 clientConfig.port = 10000 + Math.floor(Math.random()*1000);
 clientConfig.ssl = true;
@@ -15,7 +15,7 @@ var tlsOpts = {
 };
 
 
-var util = require(__dirname+'/util/common.js');
+var util = require('./util/common');
 var assert = require('assert');
 var uuid = util.uuid;
 var It = util.It;
