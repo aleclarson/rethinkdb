@@ -18,7 +18,7 @@ function It(testName, generatorFn) {
   })
 }
 function sleep(timer) {
-  return new Promise(function(resolve, reject) {
+  return Promise.defer(function(resolve, reject) {
     setTimeout(resolve, timer);
   });
 }
