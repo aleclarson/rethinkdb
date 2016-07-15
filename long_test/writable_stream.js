@@ -1,4 +1,4 @@
-var r = require('./lib/index.js')({
+var r = require('./lib/index')({
 });
 var assert = require('assert');
 

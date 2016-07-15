@@ -1,7 +1,7 @@
 var Promise = require('bluebird');
-var config = require(__dirname+'/../test/config.js');
-var r = require(__dirname+'/../lib')(config);
-var util = require(__dirname+'/../test/util/common.js');
+var config = require('../test/config');
+var r = require('../lib')(config);
+var util = require('../test/util/common');
 var assert = require('assert');
 
 

@@ -1,7 +1,7 @@
-var util = require(__dirname+'/util/common.js');
+var util = require('./util/common');
 var It = util.It;
 
-var protodef = require(__dirname+'/../lib/protodef.js');
+var protodef = require('../lib/protodef');
 var keys = Object.keys(protodef.Term.TermType);
 
 var fs = require('fs');

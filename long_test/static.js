@@ -1,8 +1,8 @@
-var config = require(__dirname+'/../test/config.js');
-var longConfig = require(__dirname+'/config.js');
+var config = require('../test/config');
+var longConfig = require('./config');
 
 var assert = require('assert');
-var util = require(__dirname+'/../test/util/common.js');
+var util = require('../test/util/common');
 var uuid = util.uuid;
 var It = util.It;
 
@@ -42,7 +42,7 @@ It('Test that pools are created and identified with discovery: true', function* 
   // Give 2 seconds for the servers to start
   yield util.sleep(2000);
   console.log('++ Starting rethinkdbdash');
-  var r = require(__dirname+'/../lib')({
+  var r = require('../lib')({
     host: host,
     port: DRIVER_PORT+INITIAL_OFFSET,
     discovery: false,

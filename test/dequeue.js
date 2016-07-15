@@ -1,4 +1,4 @@
-var Dequeue = require(__dirname+'/../lib/dequeue.js')
+var Dequeue = require('../lib/dequeue')
 var assert = require('assert');
 
 var size = 20;
