@@ -26,7 +26,8 @@
     "url": "https://github.com/neumino/rethinkdbdash/issues"
   },
   "dependencies": {
-    "Promise": "aleclarson/Promise#2.1.1"
+    "Promise": "aleclarson/Promise#2.1.1",
+    "log": "aleclarson/log#2.1.0"
   },
   "devDependencies": {
     "bluebird": ">= 3.0.1",
