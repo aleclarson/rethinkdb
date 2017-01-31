@@ -26,7 +26,8 @@
     "url": "https://github.com/neumino/rethinkdbdash/issues"
   },
   "dependencies": {
-    "Promise": "aleclarson/Promise#1.0.0"
+    "Promise": "aleclarson/Promise#1.0.0",
+    "log": "aleclarson/log#2.1.0"
   },
   "devDependencies": {
     "mocha": ">= 1.20.0",
