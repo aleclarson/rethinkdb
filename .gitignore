@@ -1,4 +1,6 @@
 *.swp
+mock/
+utils/
 npm-debug.log
 node_modules
 test.js
